@@ -11,7 +11,7 @@ Du skal lage en enkel nettside for Petter Smart. Følgende skal være med:
 * En liste med tidligere fornøyde kunder.
 
 Petter er opptatt av design og utforming. Det er derfor viktig at siden er pen og
-oversiktlig. For å få til dette <u>må du stilsette med CSS</u>. CSS-koden skal ligge i et
+oversiktlig. For å få til dette <ins>må du stilsette med CSS</ins>. CSS-koden skal ligge i et
 eksternt stilark, og du skal bruke både klasse- og id-selektorer (minst en gang hver).
 Ellers står du fritt til å utforme siden slik du vil.
 

@@ -1,0 +1,113 @@
+/*
+    #1a1a1d
+    #4e4e50
+    #6f2232
+    #950740
+    #c3073f
+
+    Night blue #2d545e
+    12343b
+    Sand tan #e1b382
+    c89666
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #12343b;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #12343b;
+    width: 80%;
+    margin: auto;
+}
+
+h2 {
+    padding: 5%;
+    padding-bottom: 0%; 
+}
+
+h3 {
+    padding-bottom: 2%;
+}
+
+a {
+    color: #12343b;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-gap: 0px;
+    margin: auto;
+  }
+
+.grid-item1 {
+    grid-column-start: 1;
+    grid-column-end:4;
+    min-height: 200px;
+    background-color: #e1b382;
+}
+
+.grid-item2 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    min-height: 300px;
+    background-color: #c89666;
+}
+
+#topbar {
+    background-color: #2d545e;
+    overflow: hidden;
+}
+
+#topbar img {
+    width: 96%;
+    padding: 2%;
+}
+
+#inventions {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.left-item {
+    grid-column: 1;
+    padding: 5%;
+}
+
+.left-item img {
+    width: 100%;
+}
+
+.right-item {
+    grid-column: 2;
+    padding: 5%;
+}
+
+.right-item img {
+    width: 100%;
+}
+
+.right-item ul {
+    padding-top: 5%;
+    padding-left: 10%;
+    line-height: 2em;
+}
+
+#contact {
+    padding-top: 15%;
+    padding-left: 10%;
+    line-height: 2em;
+}
+
+#footer {
+    min-height: 50px;
+    background-color: #2d545e;
+}

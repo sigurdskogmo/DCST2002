@@ -2,7 +2,7 @@
 
 _Denne øvingen bygger på koden som gjennomgås i leksjonen om [programvaretesting](https://folk.ntnu.no/olso/wu/testing/testing.html). Kildekoden kan
 lastes ned direkte fra [gitlab.com](https://gitlab.com/ntnu-dcst2002/testing-jest), men vi anbefaler at du utfører stegene under “Enhetstesting med
-Jest” fra start til slutt, da vi tror dette vil gi et bedre utgangspunkt for videre arbeid_
+Jest” fra start til slutt, da vi tror dette vil gi et bedre utgangspunkt for videre arbeid._
 
 ## Oppgave 1
 Den første testen i “app.test.js” – ```Year is divisible by 4 but not by 100``` – sjekker kun mot

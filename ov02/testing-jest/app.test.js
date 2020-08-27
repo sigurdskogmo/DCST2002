@@ -21,7 +21,9 @@ describe('A year is not a leap year', () => {
     });
 });
 
+// Oppgave 4
 describe('A year is not supported', () => {
+    // Oppgave 2.2
     test('Year is negative', () => {
         // When expecting a function to throw an error, 
         // we need an anonymous wrapper function
@@ -30,6 +32,7 @@ describe('A year is not supported', () => {
         }).toThrow('Invalid argument: year must be an integer equal to or larger than 0');
     });
 
+    // Oppgave 3.2
     test.each([null, undefined])('Year is null or undefined', (year) => {
         expect(() => {
             isLeapYear(year);

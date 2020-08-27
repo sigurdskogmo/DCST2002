@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1598516479463" clover="3.2.0">
-  <project timestamp="1598516479463" name="All files">
+<coverage generated="1598520430336" clover="3.2.0">
+  <project timestamp="1598520430336" name="All files">
     <metrics statements="5" coveredstatements="5" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1" elements="15" coveredelements="15" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
     <file name="app.js" path="C:\Users\sigurd\Documents\GitHub\DCST2002\ov02\testing-jest\app.js">
       <metrics statements="5" coveredstatements="5" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>

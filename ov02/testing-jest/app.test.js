@@ -29,16 +29,10 @@ describe('A year is not supported', () => {
             isLeapYear(-1);
         }).toThrow('Invalid argument: year must be an integer equal to or larger than 0');
     });
-    
-    test('Year is null', () => {
-        expect(() => {
-            isLeapYear(null);
-        }).toThrow('Invalid argument: year can not be null or undefined');
-    });
 
-    test('Year is undefined', () => {
+    test.each([null, undefined])('Year is null or undefined', (year) => {
         expect(() => {
-            isLeapYear(undefined);
+            isLeapYear(year);
         }).toThrow('Invalid argument: year can not be null or undefined');
     });
 });

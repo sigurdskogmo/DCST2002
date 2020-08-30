@@ -90,7 +90,7 @@ Forslag til datamodell: En liste består av en unik id og en tittel, mens en opp
 attributter: en id som entydig identifiserer oppgaven, en tittel, et flagg som forteller oss om
 oppgaven er ferdig eller ikke, samt en referanse til listen den tilhører.
 * Hvis vi legger alle endepunktene i “app.js” kan koden fort bli uoversiktlig. Det er mulig å
-modularisere endepunktene ved å bruke express.Router.
+modularisere endepunktene ved å bruke [express.Router](https://expressjs.com/en/guide/routing.html).
 * Listene og oppgavene kan fint lagres i en dummy-database (akkurat som i eksempelet). Det er
 ikke nødvendig å persistere i en ekte database for denne øvingen.
 

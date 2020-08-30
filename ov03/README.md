@@ -6,7 +6,6 @@ og Express”, da vi tror dette vil gi et godt grunnlag for videre arbeid._
 
 REST APIet fra leksjonen definerer noen enkle endepunkter for en Todo-app:
 
-```html
 <table>
     <tr>
         <th>Metode</th>
@@ -34,14 +33,12 @@ REST APIet fra leksjonen definerer noen enkle endepunkter for en Todo-app:
         <td>Slett en gitt oppgave</td>
     </tr>
 </table>
-```
 
 I denne øvinga skal du utvide/endre APIet slik at det støtter lister. En liste er ganske enkelt en samling
 med oppgaver. For enkelhets skyld gjør vi det slik at en oppgave bare kan tilhøre én bestemt liste.
 
 Det nye APIet skal tilby følgende endepunkter:
 
-```html
 <table>
     <tr>
         <th>Metode</th>
@@ -84,7 +81,6 @@ Det nye APIet skal tilby følgende endepunkter:
         <td>Slett en gitt oppgave i en bestemt liste</td>
     </tr>
 </table>
-```
 
 Tips:
 

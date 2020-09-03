@@ -23,6 +23,18 @@ router.post('/api/v1/lists', (request, response) => {
             response.status(400).send('A list needs the following properties: listId, listTitle and tasks.');
     }
 
+    let invalidTask = false;
+    for (let i = 0; i < list.tasks.length; i++) {
+        if (!list.tasks[i].hasOwnProperty('id') || 
+        !list.tasks[i].hasOwnProperty('title') ||
+        !list.tasks[i].hasOwnProperty('done')) {
+            invalidTask = true;
+        }
+    }
+    if (invalidTask === true) {
+        response.status(400).send(`Invalid format of tasks.`);
+    }
+
     if (lists.find(l => l.listId == list.listId)) {
         response.status(400).send(`A list with listId ${list.listId} already exists.`);
     } else {

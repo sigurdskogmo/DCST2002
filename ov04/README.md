@@ -1,21 +1,24 @@
-# Øving - Testing av REST-ressurser
+# Todo REST API 2.0
 
-_I denne øvingen skal du ta utgangspunkt i kodeeksemplet **todo-api-v2-with-tests**. Kildekoden kan
-lastes ned direkte fra [gitlab.com](https://gitlab.com/ntnu-dcst2002/todo-api-v2-with-tests). Før du begynner på oppgavene må du passe på at
-databaseløsningen er på plass. Du kan lese mer om hvordan du setter opp databasen i leksjonen
-[Testing av REST\_ressurser.](https://gitlab.com/ntnu-dcst2002/todo-api-v2-with-tests)_
+A simple Todo REST API with Node and Express.
 
-## Oppgave 1
+### Instructions
 
-I “todo-api-**mock**.test.js” er det definert ni tester, men kun én av testene er ferdig implementert. I
-oppgave 1 skal du fullføre de ufullstendige testene ved å bruke mocking.
+1. Download the project:
 
-Tips:
+```
+git clone https://gitlab.com/ntnu-dcst2002/todo-api-v2.git
+```
 
-* Fjern ```.skip``` for å få Jest til å plukke opp og kjøre testene.
-* ```Promise.resolve(value)``` og ```Promise.reject(value)``` er nyttige funksjoner når du skal
-mocke.
+2. Install dependencies with npm:
 
-## Oppgave 2 (frivillig)
-Testene i “todo-api-**db**.test.js” mangler sjekk av feiltilfeller. Funksjonsignaturene eksisterer, men er
-tomme. Fullfør testene.
+```
+cd todo-api-v2
+npm install
+```
+
+3. Run the API:
+
+```
+npm run start
+```

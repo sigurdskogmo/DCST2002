@@ -4,6 +4,7 @@
   "description": "A simple Todo REST API",
   "main": "start.js",
   "scripts": {
+    "test": "jest",
     "start": "nodemon start.js --exec babel-node"
   },
   "keywords": [],
@@ -19,6 +20,8 @@
     "@babel/node": "^7.8.4",
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.8.6",
+    "axios": "^0.19.2",
+    "jest": "^26.4.2",
     "nodemon": "^2.0.2"
   }
 }

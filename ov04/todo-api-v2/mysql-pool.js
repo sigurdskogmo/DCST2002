@@ -7,4 +7,5 @@ const pool = mysql.createPool({
     password: "brukernavn_todoapi",
     database: "brukernavn_todoapi_db_dev",
 });
+
 export default pool;

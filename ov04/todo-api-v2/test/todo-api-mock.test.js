@@ -28,39 +28,87 @@ describe("Fetch tasks (GET)", () => {
         expect(response.data).toEqual(testData);
     });
 
-    test.skip("Fetch task (200 OK)", async () => {
-        //todo
+    test("Fetch task (200 OK)", async () => {
+        taskService.get = jest.fn(() => Promise.resolve(testData[0]));
+
+        const response = await axios.get("/api/v1/tasks/1");
+        expect(response.status).toEqual(200);
+        expect(response.data).toEqual(testData[0]);
     });
 
-    test.skip("Fetch all tasks (500 Internal Server Error)", async () => {
-        //todo
+    test("Fetch all tasks (500 Internal Server Error)", async () => {
+        // Reject the request, this should return an error with code 500
+        taskService.getAll = jest.fn(() => Promise.reject());
+        
+        try {
+            const response = await axios.get("/api/v1/tasks");
+        } catch (error) {
+            expect(error.response.status).toEqual(500);
+        }
     });
 
-    test.skip("Fetch task (404 Not Found)", async () => {
-        //todo
+    test("Fetch task (404 Not Found)", async () => {
+        // Resolve with empty array, this should return 404 not found
+        taskService.get = jest.fn(() => Promise.resolve([]));
+
+        try {
+            await axios.get("/api/v1/tasks/1");
+        } catch (error) {
+            expect(error.response.status).toEqual(404);
+        }
     });
 
-    test.skip("Fetch task (500 Internal Server error)", async () => {
-        //todo
+    test("Fetch task (500 Internal Server error)", async () => {
+        // Reject promise, this should return an error with code 500
+        taskService.get = jest.fn(() => Promise.reject());
+
+        try {
+            await axios.get("/api/v1/tasks/1");
+        } catch (error) {
+            expect(error.response.status).toEqual(500);
+        }
     });
 });
 
 describe("Create new task (POST)", () => {
-    test.skip("Create new task (201 Created)", async () => {
-        //todo
+    test("Create new task (201 Created)", async () => {
+        const newTask = { id: 4, title: "Ny oppgave", done: false };
+        taskService.create = jest.fn(() => Promise.resolve(testData[3]));
+        
+        const response = await axios.post("/api/v1/tasks", newTask);
+        expect(response.status).toEqual(201);
+        expect(response.headers.location).toEqual("tasks/4");
     });
 
-    test.skip("Create new task (400 Bad Request)", async () => {
-        //todo
+    test("Create new task (400 Bad Request)", async () => {
+        // Pass task with missing id, this should return an error
+        const newTask = { title: "Ny oppgave", done: false}; 
+        taskService.create = jest.fn(() => Promise.resolve());
+        
+        try {
+            await axios.post("/api/v1/tasks", newTask);
+        } catch (error) {
+            expect(error.response.status).toEqual(400);
+        }
     });
 
-    test.skip("Create new task (500 Internal Server error)", async () => {
-        //todo
+    test("Create new task (500 Internal Server error)", async () => {
+        const newTask = { id: 4, title: "Ny oppgave", done: false};
+        // Reject the request (pretend there is an server error), this should return an error with code 500
+        taskService.create = jest.fn(() => Promise.reject()); 
+        
+        try {
+            await axios.post("/api/v1/tasks", newTask);
+        } catch (error) {
+            expect(error.response.status).toEqual(500);
+        }
     });
 });
 
 describe("Delete task (DELETE)", () => {
-    test.skip("Delete task (200 OK)", async () => {
-        //todo
+    test("Delete task (200 OK)", async () => {
+        taskService.delete = jest.fn(() => Promise.resolve(testData));
+        const response = await axios.delete("/api/v1/tasks/4");
+        expect(response.status).toEqual(200);
     });
 });

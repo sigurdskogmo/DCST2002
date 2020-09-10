@@ -57,8 +57,12 @@ describe("Fetch tasks (GET)", () => {
         //todo
     });
 
-    test.skip("Fetch task (404 Not Found)", async () => {
-        //todo
+    test("Fetch task (404 Not Found)", async () => {
+        try {
+            await axios.get("/api/v1/tasks/4");
+        } catch (error) {
+            expect(error.response.status).toEqual(404);
+        }
     });
 
     test.skip("Fetch task (500 Internal Server error)", async () => {
@@ -74,8 +78,15 @@ describe("Create new task (POST)", () => {
         expect(response.headers.location).toEqual("tasks/4");
     });
 
-    test.skip("Create new task (400 Bad Request)", async () => {
-        //todo
+    test("Create new task (400 Bad Request)", async () => {
+        // Pass task with missing id, this should return an error
+        const newTask = { title: "Ny oppgave", done: false}; 
+        
+        try {
+            await axios.post("/api/v1/tasks", newTask);
+        } catch (error) {
+            expect(error.response.status).toEqual(400);
+        }
     });
 
     test.skip("Create new task (500 Internal Server error)", async () => {

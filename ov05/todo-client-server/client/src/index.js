@@ -6,7 +6,7 @@ import { Component } from 'react-simplified';
 import { Card, Row, Column, Form, Button } from './widgets';
 import taskService, { type Task } from './task-service';
 
-class Tasks extends Component {
+class TaskList extends Component {
   tasks: Task[] = [];
 
   render() {
@@ -48,7 +48,7 @@ class TaskNew extends Component {
           onClick={() => {
             taskService.create(this.title).then(() => {
               // Reloads the tasks in the Tasks component
-              Tasks.instance()?.mounted(); // .? meaning: call Tasks.instance().mounted() if Tasks.instance() does not return null
+              TaskList.instance()?.mounted(); // .? meaning: call Tasks.instance().mounted() if Tasks.instance() does not return null
               this.title = '';
             });
           }}
@@ -64,7 +64,7 @@ const root = document.getElementById('root');
 if (root)
   ReactDOM.render(
     <>
-      <Tasks />
+      <TaskList />
       <TaskNew />
     </>,
     root

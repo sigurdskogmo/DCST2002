@@ -4,7 +4,7 @@
   "description": "A simple to-do REST server",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/server.js --exec 'babel-node --require ./src/config'",
+    "start": "nodemon src/server.js --exec babel-node --require ./src/config",
     "test": "jest --setupFiles ./test/config"
   },
   "browserslist": [
@@ -28,6 +28,7 @@
     "flow-bin": "^0.133.0",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "reload": "^3.1.0"
   }
 }

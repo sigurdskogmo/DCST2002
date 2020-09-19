@@ -12,9 +12,41 @@ class TaskList extends Component {
   render() {
     return (
       <Card title="Tasks">
+        <Row>
+          <Column width={8}>
+            <b>Title</b>
+          </Column>
+          <Column width={2}>
+            <b>Done</b>
+          </Column>
+          <Column width={2}></Column>
+        </Row>
         {this.tasks.map((task) => (
           <Row key={task.id}>
-            <Column>{task.title}</Column>
+            <Column width={8}>{task.title}</Column>
+            <Column width={2}>
+              <Form.Input
+                type="checkbox"
+                value={task.done}
+                onChange={() => {
+                  taskService.toggleDone(task.done, task.id).then(() => {
+                    TaskList.instance()?.mounted();
+                  });
+                }}
+              ></Form.Input>
+            </Column>
+            <Column width={2}>
+              <Button.Danger
+                onClick={() => {
+                  taskService.delete(task.id).then(() => {
+                    // Reloads the tasks in the Tasks component
+                    TaskList.instance()?.mounted(); // .? meaning: call Tasks.instance().mounted() if Tasks.instance() does not return null
+                  });
+                }}
+              >
+                x
+              </Button.Danger>
+            </Column>
           </Row>
         ))}
       </Card>

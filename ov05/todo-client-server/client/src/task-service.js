@@ -34,6 +34,16 @@ class TaskService {
       .post<{ title: string }, { id: number }>('/tasks', { title: title })
       .then((response) => response.data.id);
   }
+
+  delete(id: number) {
+    return axios.delete<Task>('/tasks/' + id).then((response) => console.log('Element deleted'));
+  }
+
+  toggleDone(done: boolean, id: number) {
+    return axios
+      .patch<{ done: boolean }, { id: number }>('/tasks/' + id, { done: done })
+      .then((response) => console.log('toggleDone'));
+  }
 }
 
 export default new TaskService();

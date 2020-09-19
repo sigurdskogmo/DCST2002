@@ -150,7 +150,7 @@ class FormInput extends Component<{
   render() {
     return (
       <input
-        className="form-control"
+        className={'form-control'}
         type={this.props.type}
         value={this.props.value}
         onChange={this.props.onChange}

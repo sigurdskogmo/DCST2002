@@ -25,15 +25,16 @@ class TaskList extends Component {
           <Row key={task.id}>
             <Column width={8}>{task.title}</Column>
             <Column width={2}>
-              <Form.Input
+              {console.log(task.done)}
+              <input
                 type="checkbox"
-                value={task.done}
+                checked={task.done}
                 onChange={() => {
                   taskService.toggleDone(task.done, task.id).then(() => {
                     TaskList.instance()?.mounted();
                   });
                 }}
-              ></Form.Input>
+              />
             </Column>
             <Column width={2}>
               <Button.Danger

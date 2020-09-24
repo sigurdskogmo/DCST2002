@@ -41,7 +41,7 @@ class TaskService {
 
   toggleDone(done: boolean, id: number) {
     return axios
-      .patch<{ done: boolean }, { id: number }>('/tasks/' + id, { done: done })
+      .patch<{ done: boolean }, { id: number }>('/tasks/' + id, { done: !done })
       .then((response) => console.log('toggleDone'));
   }
 }

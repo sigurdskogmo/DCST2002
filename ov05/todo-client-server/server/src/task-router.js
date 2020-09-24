@@ -38,4 +38,11 @@ router.delete('/tasks/:id', (request, response) => {
     .catch((error: Error) => response.status(500).send(error));
 });
 
+router.put('/tasks/:id', (request, response) => {
+  taskService
+    .update(Number(request.params.id))
+    .then((result) => response.send())
+    .catch((error: Error) => response.status(400).send(error));
+});
+
 export default router;

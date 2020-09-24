@@ -39,10 +39,8 @@ class TaskService {
     return axios.delete<Task>('/tasks/' + id).then((response) => console.log('Element deleted'));
   }
 
-  toggleDone(done: boolean, id: number) {
-    return axios
-      .patch<{ done: boolean }, { id: number }>('/tasks/' + id, { done: !done })
-      .then((response) => console.log('toggleDone'));
+  toggleDone(id: number) {
+    return axios.put<{}, {}>(`/tasks/${id}`);
   }
 }
 

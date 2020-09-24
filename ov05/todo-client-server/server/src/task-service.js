@@ -63,6 +63,16 @@ class TaskService {
       });
     });
   }
+
+  update(id: number) {
+    return new Promise<void>((resolve, reject) => {
+      pool.query('UPDATE Tasks SET done = 1 - done WHERE id = ?', [id], (error) => {
+        if (error) return reject(error);
+
+        resolve();
+      });
+    });
+  }
 }
 
 export default new TaskService();

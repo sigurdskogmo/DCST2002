@@ -19,7 +19,9 @@ class TaskList extends Component {
           <Column width={2}>
             <b>Done</b>
           </Column>
-          <Column width={2}></Column>
+          <Column width={2}>
+            <b>Delete</b>
+          </Column>
         </Row>
         {this.tasks.map((task) => (
           <Row key={task.id}>
@@ -30,7 +32,7 @@ class TaskList extends Component {
                 type="checkbox"
                 checked={task.done}
                 onChange={() => {
-                  taskService.toggleDone(task.done, task.id).then(() => {
+                  taskService.toggleDone(task.id).then(() => {
                     TaskList.instance()?.mounted();
                   });
                 }}

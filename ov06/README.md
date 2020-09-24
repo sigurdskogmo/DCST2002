@@ -20,7 +20,7 @@ Ta utgangspunkt i eksempelkoden for leksjonen: [https://gitlab.com/ntnu-dcst2002
 
 - Oppnå 70% testdekning på uttrykk (`Stmts`) for `client/src/task-components.js`. En løsning kan eksempelvis gi følgende utskrift fra `npm test` i `client/`-mappen:
 
-```
+<pre>
 --------------------|---------|----------|---------|---------|
 File | % Stmts | % Branch | % Funcs | % Lines |
 --------------------|---------|----------|---------|---------|
@@ -28,11 +28,11 @@ All files | 55.7 | 0 | 47.27 | 55.7 |
 task-components.js | 75 | 100 | 67.74 | 75 |
 widgets.js | 39.53 | 0 | 20.83 | 39.53 |
 --------------------|---------|----------|---------|---------|
-```
+</pre>
 
 - Oppnå 70% testdekning på uttrykk for alle filene (utenom `server.js` og `config.js`) i `server/src/`-katalogen. En løsning kan eksempelvis gi følgende utskrift fra `npm test` i `server/`-mappen:
 
-```
+<pre>
 -----------------|---------|----------|---------|---------|
 File | % Stmts | % Branch | % Funcs | % Lines |
 -----------------|---------|----------|---------|---------|
@@ -42,4 +42,4 @@ mysql-pool.js | 100 | 75 | 100 | 100 |
 task-router.js | 85.71 | 100 | 73.33 | 85.71 |
 task-service.js | 80 | 57.14 | 100 | 100 |
 -----------------|---------|----------|---------|---------|
-```
+</pre>

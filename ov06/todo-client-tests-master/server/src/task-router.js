@@ -26,12 +26,27 @@ router.get('/tasks/:id', (request, response) => {
 // Example response body: { id: 4 }
 router.post('/tasks', (request, response) => {
   const data = request.body;
-  if (data && typeof data.title == 'string' && data.title.length != 0)
+  if (
+    data &&
+    typeof data.title == 'string' &&
+    data.title.length != 0 &&
+    typeof data.description == 'string'
+  )
     taskService
-      .create(data.title)
+      .create(data.title, data.description)
       .then((id) => response.send({ id: id }))
       .catch((error: Error) => response.status(500).send(error));
   else response.status(400).send('Missing task title');
+});
+
+router.put('/tasks/:id', (request, response) => {
+  const data = request.body;
+  const id = Number(request.params.id);
+  //console.log(id, data.title, data.done, data.description);
+  taskService
+    .update(id, data.title, data.done, data.description)
+    .then((result) => response.send())
+    .catch((error: Error) => response.status(400).send(error));
 });
 
 router.delete('/tasks/:id', (request, response) => {

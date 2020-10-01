@@ -40,14 +40,33 @@ class TaskService {
    *
    * Resolves the newly created task id.
    */
-  create(title: string) {
+  create(title: string, description: string) {
     return new Promise<number>((resolve, reject) => {
-      pool.query('INSERT INTO Tasks SET title=?', [title], (error, results) => {
-        if (error) return reject(error);
-        if (!results.insertId) return reject(new Error('No row inserted'));
+      pool.query(
+        'INSERT INTO Tasks SET title=?, description=?',
+        [title, description],
+        (error, results) => {
+          if (error) return reject(error);
+          if (!results.insertId) return reject(new Error('No row inserted'));
 
-        resolve(Number(results.insertId));
-      });
+          resolve(Number(results.insertId));
+        }
+      );
+    });
+  }
+
+  update(id: number, title: string, done: boolean, description: string) {
+    return new Promise<void>((resolve, reject) => {
+      pool.query(
+        'UPDATE Tasks SET title = ?, done = ?, description = ? WHERE id = ?',
+        [title, done, description, id],
+        (error, results) => {
+          console.log(error);
+          if (error) return reject(error);
+
+          resolve();
+        }
+      );
     });
   }
 

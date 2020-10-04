@@ -11,7 +11,7 @@ describe('Alert tests', () => {
     expect(wrapper.matchesElement(<></>)).toEqual(true);
   });
 
-  test('Show alert message', (done) => {
+  test('Open three alert messsages and close the second alert message', (done) => {
     const wrapper = shallow(<Alert />);
 
     Alert.danger('test');
@@ -35,7 +35,9 @@ describe('Alert tests', () => {
   test('Close alert message', (done) => {
     const wrapper = shallow(<Alert />);
 
-    Alert.danger('test');
+    Alert.danger('test1');
+    Alert.danger('test2');
+    Alert.danger('test3');
 
     // Wait for events to complete
     setTimeout(() => {
@@ -43,15 +45,32 @@ describe('Alert tests', () => {
         wrapper.matchesElement(
           <>
             <div>
-              test<button>&times;</button>
+              test1<button>&times;</button>
+            </div>
+            <div>
+              test2<button>&times;</button>
+            </div>
+            <div>
+              test3<button>&times;</button>
             </div>
           </>
         )
       ).toEqual(true);
 
-      wrapper.find('button.close').simulate('click');
+      wrapper.find('button.close').at(1).simulate('click');
 
-      expect(wrapper.matchesElement(<></>)).toEqual(true);
+      expect(
+        wrapper.matchesElement(
+          <>
+            <div>
+              test1<button>&times;</button>
+            </div>
+            <div>
+              test3<button>&times;</button>
+            </div>
+          </>
+        )
+      ).toEqual(true);
 
       done();
     });

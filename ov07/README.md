@@ -26,7 +26,7 @@ Sett opp Continuous Integration (gjennom en ```.gitlab-ci.yml``` fil) for løsni
 
 Kjøring av servertestene med database oppkobling krever at du først setter opp miljøvariabler:
 
-<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1138432-dt-content-rid-30705514_1/xid-30705514_1" />
+<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1123227-dt-content-rid-30205616_1/xid-30205616_1" style="box-sizing: content-box; border-style: none; max-width: 100%; background-color: #ffffff;" width="447" height="311">
 
 ```yml
 variables:

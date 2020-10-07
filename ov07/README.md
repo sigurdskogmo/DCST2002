@@ -7,7 +7,7 @@ Lag en web-applikasjon som lar brukeren skrive og kjøre kildekode i et gitt pro
 
 Eksempel løsning:
 
- 
+<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1123227-dt-content-rid-30205616_1/xid-30205616_1" style="box-sizing: content-box; border-style: none; max-width: 100%; background-color: #ffffff;" width="447" height="311">
 
 Merk at et program alltid har følgende mulige utskrifter og retur verdi:
 
@@ -25,8 +25,6 @@ Frivillig:
 Sett opp Continuous Integration (gjennom en ```.gitlab-ci.yml``` fil) for løsningen du lagde i forrige øving.
 
 Kjøring av servertestene med database oppkobling krever at du først setter opp miljøvariabler:
-
-<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1123227-dt-content-rid-30205616_1/xid-30205616_1" style="box-sizing: content-box; border-style: none; max-width: 100%; background-color: #ffffff;" width="447" height="311">
 
 ```yml
 variables:

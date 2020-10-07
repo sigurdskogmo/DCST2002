@@ -7,7 +7,7 @@ Lag en web-applikasjon som lar brukeren skrive og kjøre kildekode i et gitt pro
 
 Eksempel løsning:
 
-<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1123227-dt-content-rid-30205616_1/xid-30205616_1" style="box-sizing: content-box; border-style: none; max-width: 100%; background-color: #ffffff;" width="447" height="311">
+<img src="https://ntnu.blackboard.com/bbcswebdav/pid-1138432-dt-content-rid-30705514_1/xid-30705514_1" style="box-sizing: content-box; border-style: none; max-width: 100%; background-color: #ffffff;" width="485" height="479">
 
 Merk at et program alltid har følgende mulige utskrifter og retur verdi:
 

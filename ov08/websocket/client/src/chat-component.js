@@ -10,7 +10,7 @@ export class Chat extends Component {
   connected = false;
   username = '';
   message = { user: '', text: ''};
-  messages = [['Ole', 'Hei Per! Hvordan går det?']];
+  messages = [];
   connectedUsers = [];
 
   render() {

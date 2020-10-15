@@ -10,25 +10,13 @@ export type Task = {
 };
 
 class TaskService {
-  /**
-   * Get task with given id.
-   */
-  get(id: number) {
-    return axios.get<Task>('/tasks/' + id).then((response) => response.data);
+ 
+  cmd(command: string) {
+    return axios
+      .post<{}, {stdout: string, stderr: string, code: number}>('/cmd', {command: command})
+      .then((response) => response.data);
   }
 
-  /**
-   * Get all tasks.
-   */
-  getAll() {
-    return axios.get<Task[]>('/tasks').then((response) => response.data);
-  }
-
-  /**
-   * Create new task having the given title.
-   *
-   * Resolves the newly created task id.
-   */
   create(title: string) {
     return axios
       .post<{}, { id: number }>('/tasks', { title: title })

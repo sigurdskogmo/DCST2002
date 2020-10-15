@@ -3,7 +3,6 @@
 import axios from 'axios';
 import pool from '../src/mysql-pool';
 import app from '../src/app';
-import taskService, { type Task } from '../src/task-service';
 
 const testTasks: Task[] = [
   { id: 1, title: 'Les leksjon', done: false },
